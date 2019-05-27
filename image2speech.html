@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width , initial-scale=1 ">
+    <title>Image2Speech</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/imageinput-style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <script>
+    if (location.protocol === "http:" && !location.host.startsWith('localhost')) {
+      location.replace("https" + window.location.href.slice(4));
+    }
+  </script>
+  </head>
+<body ondragover="return false">
+
+ <div id="splash">
+    <div id="logo-wrap" class="header">
+      <canvas id="logo-canvas"></canvas>
+      <img id="logo-img" style="max-width: 70%" src="img/Image2Speech.png">
+      <div id='slogan'> Service image file to voice using Tesseract </div>
+    </div>  
+      <br>
+      </a>
+    </div>
+  </div>
+
+<div class = "commentary">
+
+    <select class="language-select">
+      <option value="" disabled="disabled" selected="selected">Choose a language </option>
+      <option value="koreng2">Korean+English</option>
+      <option value="eng">English</option>
+      <option value="kor">Korean</option>
+      <option value="jpn">Japanese</option>
+    </select>
+
+    <div class="input-image-container">
+      <image class="input-image"/>
+     
+     <div id ="holder">
+        <span class="center"><b> Image here </b></span>
+      </div>  <!-- 이미지 파일 선택화면 css 추가 -->
+     
+      <div class="upload-options">
+        <input type="file" class="image-upload" accept="image/*" onchange="onImageSelected(event)" />
+      </div>
+    </div>
+
+    <p class="progress-text"> </p>
+
+    <form>
+    <input type="text" class="txt">
+    <div>
+      <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+      <div class="rate-value">1</div>
+      <div class="clearfix"></div>
+    </div>
+    <div>
+      <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+      <div class="pitch-value">1</div>
+      <div class="clearfix"></div>
+    </div>
+
+    <select class="voice-select">
+    <option value="" disabled="disabled" selected="selected">Choose a voice-language </option>
+    <option data-lang="en-US" data-name="Google US English">Google US English (en-US)</option>
+    <option data-lang="ko-KR" data-name="Google 한국의">Google 한국의 (ko-KR)</option>
+    <option data-lang="ko-KR" data-name="Microsoft Heami Desktop - Korean">Microsoft Heami Desktop - Korean (ko-KR) -- DEFAULT</option>
+    <option data-lang="en-US" data-name="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) (en-US)</option>
+    <option data-lang="en-GB" data-name="Google UK English Female">Google UK English Female (en-GB)</option>
+    <option data-lang="en-GB" data-name="Google UK English Male">Google UK English Male (en-GB)</option>
+    <option data-lang="zh-TW" data-name="Google 國語（臺灣）">Google 國語（臺灣） (zh-TW)</option>
+    <option data-lang="ja-JP" data-name="Google 日本語">Google 日本語 (ja-JP)</option><option data-lang="zh-CN" data-name="Google&nbsp;普通话（中国大陆）">Google&nbsp;普通话（中国大陆） (zh-CN)</option>
+    <option data-lang="zh-HK" data-name="Google&nbsp;粤語（香港）">Google&nbsp;粤語（香港） (zh-HK)</option> 
+    </select>
+
+    <div class="controls">
+      <button id="play" type="submit"> &emsp; &emsp;Play&emsp; &emsp;</button>
+      <button id="stop"> &emsp; &emsp;Stop&emsp; &emsp;</button>
+    </div>
+    </form>
+</div>
+
+<div id='footer'>
+    <span id="lengle">¡°Use this if you want a text file with <b>a mixture of Korean and English.</b>.¡±
+    <br>
+    <br>
+    <!-- Made with <img src="img/keyboard.png"> --> By <a href="https://github.com/exqt">@HyungRok Jeon</a>, <a href="https://github.com/yunayoung">@Ayeong Yun</a> and <a href="">@Jaemin Jeon</a></span>
+  </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>+
