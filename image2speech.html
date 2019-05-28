@@ -10,6 +10,28 @@
    <link rel="stylesheet" href="css/imageinput-style.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 
+    <style>
+      
+        input[type=file] {
+            position: absolute;
+            top: 0;
+                right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+
+             position: relative;
+            overflow: hidden;
+        }
+    </style>
+
     <script>
     if (location.protocol === "http:" && !location.host.startsWith('localhost')) {
       location.replace("https" + window.location.href.slice(4));
@@ -43,12 +65,11 @@
       <image class="input-image"/>
      
      <div id ="holder">
-        <span class="center"><b> Image here </b></span>
-      </div>  <!-- 이미지 파일 선택화면 css 추가 -->
-     
-      <div class="upload-options">
-        <input type="file" class="image-upload" accept="image/*" onchange="onImageSelected(event)" />
-      </div>
+        <span class="center"><b> Image here </b>
+        upload
+         <input type="file" class="image-upload" accept="image/*" onchange="onImageSelected(event)" />
+       </span>
+      </div>  <!-- 이미지 파일 선택화면 css 추가 -->      
     </div>
 
     <p class="progress-text"> </p>
